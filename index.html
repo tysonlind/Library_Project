@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Library Project</title>
   </head>
   <body>
@@ -18,6 +19,25 @@
         <h1>Library Project</h1>
         <div id="library">
           <!-- Add table here -->
+          <form action="" id="newBookForm">
+            <table style="min-width: 680px; margin: 2rem">
+              <tr>
+                <td>
+                  <label for="title">Title</label><br />
+                  <input type="text" id="title" name="title" required />
+                </td>
+                <td>
+                  <label for="author">Author</label><br />
+                  <input type="text" id="author" name="author" required />
+                </td>
+                <td>
+                  <label for="isRead">Read</label><br />
+                  <input type="checkbox" id="isRead" name="isRead" />
+                </td>
+              </tr>
+            </table>
+            <button type="submit">Add Book</button>
+          </form>
           <table id="table" style="min-width: 680px; margin: 2rem">
             <thead>
               <tr>
@@ -26,7 +46,7 @@
                 <th>Read</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="bookTable">
               <tr>
                 <td>Name of the Wind</td>
                 <td>Patrick Rothfuss</td>
@@ -43,6 +63,7 @@
             </tbody>
           </table>
         </div>
+      </div>
     </main>
 
     <script src="app.js"></script>
