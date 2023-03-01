@@ -43,24 +43,35 @@ class Library {
 
        //create elements
        const tr = document.createElement("tr");
+       tr.setAttribute("class",book.id);
        const tdTitle = document.createElement("td");
        tdTitle.textContent = book.title;
        const tdAuthor = document.createElement("td");
        tdAuthor.textContent = book.author;
        const tdIsRead = document.createElement("td");
        tdIsRead.type = "checkbox";
+       const buttonTd = document.createElement("button");
+       buttonTd.value = book.id;
+       buttonTd.textContent = "Delete";
+       buttonTd.addEventListener("click", () => {
+        const row = document.getElementsByClassName(buttonTd.value);
+        if (row){
+            row[0].remove();
+        }
+       })
 
 
         const inputIsRead = document.createElement("input");
         inputIsRead.type = "checkbox";
         inputIsRead.checked = book.isRead;
-        inputIsRead.disabled = true;
+        inputIsRead.disabled = false;
 
        //appending table divs
        tdIsRead.append(inputIsRead);
        tr.append(tdTitle);
        tr.append(tdAuthor);
        tr.append(tdIsRead);
+       tr.append(buttonTd);
        tableBodyElement.append(tr);
 
        console.log(book.id);
@@ -71,6 +82,8 @@ class Library {
         inputTitle.value = "";
         inputAuthor.value = "";
         bookIsRead.checked = false;
+
+        console.log(this.books);
 
 }}
 

@@ -1,4 +1,35 @@
+:root {
+    --text-color: #fff;
+    --background-color: #222;
+}
+body {
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
 #libBtn {
     position: relative;
     right: 5px;
+}
+button {
+    width: 75px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: rgb(243, 121, 121);
+    color: #fff;
+    font-weight: 800;
+}
+
+form button {
+    width: 125px;
+    border-radius:15px;
+    background-color: rgb(34, 63, 34);
+    color: white;
+    font-weight: 800;
+
+}
+
+form input {
+    height: 25px;
+    width: 200px;
+    text-align: center;
 }
